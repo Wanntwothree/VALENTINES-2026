@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Login container with glow */
+.login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  background: rgba(192, 103, 255, 0.9);
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(186,85,211,0.8),
+              0 0 40px rgba(186,85,211,0.6),
+              0 0 60px rgba(186,85,211,0.4);
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.5;
+  z-index: 10;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fffefe;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #ddd; /* lighter for contrast */
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button with glow */
+button {
+  width: 100%;
+  padding: 0.7rem;
+  background: #6a0dad; /* deep purple */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(106,13,173,0.8),
+              0 0 30px rgba(106,13,173,0.6);
+}
+
+button:hover {
+  background: #7c47b1; /* lighter purple on hover */
+  box-shadow: 0 0 25px rgba(178,102,255,1),
+              0 0 50px rgba(178,102,255,0.8);
+}
+
+
+/* Glow pulse animation */
+@keyframes glowPulse {
+  0%   { box-shadow: 0 0 15px rgba(186,85,211,0.7),
+                     0 0 30px rgba(186,85,211,0.5); }
+  50%  { box-shadow: 0 0 25px rgba(186,85,211,1),
+                     0 0 50px rgba(186,85,211,0.8),
+                     0 0 70px rgba(186,85,211,0.6); }
+  100% { box-shadow: 0 0 15px rgba(186,85,211,0.7),
+                     0 0 30px rgba(186,85,211,0.5); }
+}
+/* Base styles (desktop/tablet) already defined above */
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .login-container {
+    width: 90%;              /* shrink to fit screen */
+    max-width: none;          /* remove fixed max width */
+    padding: 15px 20px;       /* tighter padding */
+    font-size: 16px;          /* slightly smaller text */
+  }
+
+  .login-container h2 {
+    font-size: 20px;          /* adjust heading size */
+    margin-bottom: 1rem;
+  }
+
+  .input-group input {
+    padding: 0.6rem;          /* bigger tap area */
+    font-size: 16px;
+  }
+
+  button {
+    padding: 0.8rem;
+    font-size: 16px;
+  }
+}
+
+/* Extra small devices (phones under 400px wide) */
+@media (max-width: 400px) {
+  .login-container {
+    width: 95%;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .login-container h2 {
+    font-size: 18px;
+  }
+
+  .input-group input,
+  button {
+    font-size: 14px;
+  }
+}
