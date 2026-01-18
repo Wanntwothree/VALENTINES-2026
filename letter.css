@@ -89,27 +89,27 @@ body {
 }
 
 .next-button {
-  display: inline-block;       /* fits naturally to text */
-  margin-top: 150px;    /* small gap below the message */
+  display: inline-block;
+  margin-top: 20px;       /* smaller gap */
   padding: 0.5rem 1rem;
   background: #6a0dad;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.95rem;
-  font-family: 'Arial', sans-serif;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 10px rgba(106,13,173,0.7),
               0 0 20px rgba(106,13,173,0.5);
-  position: relative;          /* stays in normal flow */
+  position: relative;
+  z-index: 30;            /* higher than floating-message */
 }
 
 .next-button:hover {
   background: #b266ff;
   box-shadow: 0 0 20px rgba(178,102,255,1),
-              0 0 40px rgba(178,102,255,0.8);
+              0 0 40px rgba(227, 201, 253, 0.8);
 }
 
 /* Responsive tweaks */
@@ -120,3 +120,20 @@ body {
     padding: 0.6rem 1rem;
   }
 }
+
+a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: purple;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Ensure clicks are allowed */
+a.btn {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10; /* bring it above overlays */
+}
+
